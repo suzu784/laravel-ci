@@ -60,7 +60,7 @@ jobs:
           name: deploy
           command: |
             ssh -o StrictHostKeyChecking=no -t webapp@${HOST_NAME} "cd laravel-ci && \
-              git pull origin master && \
+              git pull origin main && \
               composer install -n --no-dev --prefer-dist && \
               npm ci && \
               npm run prod && \

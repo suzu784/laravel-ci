@@ -58,6 +58,8 @@ jobs:
       - run:
           name: deploy
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
+            sudo apt-get update
             ssh -o StrictHostKeyChecking=no -t webapp@${HOST_NAME} "cd laravel-ci && \
               git pull origin master && \
               composer install -n --no-dev --prefer-dist && \
